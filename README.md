@@ -46,8 +46,10 @@
 ![메인페이지](https://github.com/user-attachments/assets/9654fd23-52f6-41aa-ae93-e66270675524)
 
 ## 장소 상세 페이지 
+* 전국에 있는
 ![장소상세](https://github.com/user-attachments/assets/018f3597-96fb-42a3-904a-5df0868e843c)
 
 ## 장소 검색 페이지 
+
 ![장소검색](https://github.com/user-attachments/assets/ab79221d-8107-4ca7-bcde-d2f1a07efaee)
 
