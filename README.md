@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/268aa27c-f1da-4a2c-8eca-ebb656a43084)
+
 # :seedling: Kinderpia 
 ## 프로젝트 소개
 
@@ -16,10 +18,10 @@
 
 #### 석원준 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/ymind14563)
 - 채팅, 신고, 파이프라인 자동화 구축
-- **서버 배포**: AWS (EC2, RDS, S3), NGINX
+- 서버 배포: AWS (EC2, RDS, S3), NGINX
 
 #### 유예진 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/yjyoo6831)
-- 장소 검색, 리뷰 CRUD
+- 장소 목록, 검색, 리뷰, 좋아요 CRUD
 #### 윤예슬 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/errorose)
 - 모임 CRUD
 
@@ -46,10 +48,23 @@
 ![메인페이지](https://github.com/user-attachments/assets/9654fd23-52f6-41aa-ae93-e66270675524)
 
 ## 장소 상세 페이지 
--  장소 정보를 보여주며, 후기와 별점을 통해 장소를 평가한다. 
+-  장소 정보를 보여주며, 후기와 별점을 통해 장소를 평가한다.
 ![장소상세](https://github.com/user-attachments/assets/018f3597-96fb-42a3-904a-5df0868e843c)
+
+## 장소 상세 페이지 - 후기 나열
+- 장소별 후기 목록과 후기별 좋아요 개수를 보여준다.
+![장소상세후기](https://github.com/user-attachments/assets/8918a1e9-6317-4170-bd88-9de2d7e0d188)
 
 ## 장소 검색 페이지 
 - 장소명, 지역 범위를 통해 장소를 검색하고, 별점순으로 필터할 수 있다. 
 ![장소검색](https://github.com/user-attachments/assets/ab79221d-8107-4ca7-bcde-d2f1a07efaee)
+
+## 모임 상세 페이지
+- 장소, 모임 날짜, 모임 인원을 지정하여 모임 생성을 할 수 있다.
+![모임상세](https://github.com/user-attachments/assets/c797fa1b-1edf-430e-9d8a-dc511d746934)
+
+
+## 채팅 
+- 양방향 통신이 가능한 채팅 기능을 제공한다. (websocket 사용)
+![채팅](https://github.com/user-attachments/assets/e4e677e7-7fa7-405d-a8e7-f7c5c1bd5aec)
 
