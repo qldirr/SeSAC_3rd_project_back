@@ -50,13 +50,13 @@ public class MeetingController {
         }
     }
 
-    // 모임 목록 (open - 열려있는 것만 정렬)
+    // 모임 목록 (open - 열려있는 것만 정렬 + 모임 시간순으로 정렬)
     @GetMapping("/list/open")
     public ResponseEntity<ResponseHandler<PaginationResponseDTO<MeetingDTO>>> getOpenMeetings(
             @RequestParam(value = "page", defaultValue = "1") int page,
             @RequestParam(value = "size", defaultValue = "6") int size
     ) {
-        Pageable pageable = PageRequest.of(page - 1, size, Sort.by(Sort.Direction.DESC, "createdAt"));
+        Pageable pageable = PageRequest.of(page - 1, size);
         PaginationResponseDTO<MeetingDTO> paginationResponse = meetingService.getOpenMeetings(pageable);
 
         return ResponseEntity.ok(
@@ -64,15 +64,14 @@ public class MeetingController {
         );
     }
 
-    // 키워드로 모임 검색
+    // 키워드로 모임 검색 ( 모임 시간순으로 정렬)
     @GetMapping("/list/search")
     public ResponseEntity<ResponseHandler<PaginationResponseDTO<MeetingDTO>>> getSearchMeetingsByKeyword(
             @RequestParam("keyword") String keyword,
             @RequestParam(value = "page", defaultValue = "1") int page,
             @RequestParam(value = "size", defaultValue = "6") int size
     ) {
-        log.info("12333333323232332"+keyword);
-        Pageable pageable = PageRequest.of(page - 1, size, Sort.by(Sort.Direction.DESC, "createdAt"));
+        Pageable pageable = PageRequest.of(page - 1, size);
         PaginationResponseDTO<MeetingDTO> paginationResponse = meetingService.searchMeetingsByKeyword(keyword, pageable);
 
         return ResponseEntity.ok(

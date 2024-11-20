@@ -72,10 +72,14 @@ public class MeetingServiceImpl implements MeetingService {
         return new PaginationResponseDTO<>(meetingDTOS, meetings);
     }
 
-    // 모임 목록 (open - 열려있는 것만 정렬)
+    // 모임 목록 (open - 열려있는 것만 정렬 + 모임 시간순으로 정렬)
     @Override
     public PaginationResponseDTO<MeetingDTO> getOpenMeetings(Pageable pageable) {
-        Page<Meeting> meetings = meetingRepository.findByMeetingStatus(MeetingStatus.ONGOING, pageable);
+        // 정렬 meetingTime
+        Sort sort = Sort.by(Sort.Direction.DESC, "meetingTime");
+        Pageable sortedPageable = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize(), sort);
+
+        Page<Meeting> meetings = meetingRepository.findByMeetingStatus(MeetingStatus.ONGOING, sortedPageable);
 
         if (meetings.isEmpty()) {
             throw new CustomException(ExceptionStatus.MEETING_NOT_FOUND);
@@ -93,11 +97,15 @@ public class MeetingServiceImpl implements MeetingService {
         return new PaginationResponseDTO<>(meetingDTOS, meetings);
     }
 
-    // 키워드로 타이틀과 장소 검색
+    // 키워드로 타이틀과 장소 검색 (모임 시간순으로 정렬)
     @Override
     public PaginationResponseDTO<MeetingDTO> searchMeetingsByKeyword(String keyword, Pageable pageable) {
+        // 정렬 meetingTime
+        Sort sort = Sort.by(Sort.Direction.DESC, "meetingTime");
+        Pageable sortedPageable = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize(), sort);
+
         Page<Meeting> meetings = meetingRepository.findByMeetingTitleOrDistrict(
-                keyword, pageable);
+                keyword, sortedPageable);
 
         if (meetings.isEmpty()) {
             throw new CustomException(ExceptionStatus.MEETING_NOT_FOUND);
