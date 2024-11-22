@@ -121,8 +121,9 @@ Password: test1234
 
 ## 📍 주요 테이블 설계
 
-<img src="https://github.com/user-attachments/assets/e2ce7739-d790-43d1-9fa8-4eda313269aa" width="900"> <br>
+<img src="https://github.com/user-attachments/assets/2357027d-2428-425f-a13d-89e9c263be57" width="900"> <br>
 - 사용자(User)와 모임(Meeting) 테이블 간 다대다(M:N) 관계 매핑 테이블 사용자 모임 매핑(UserMeeting) 테이블 생성
+
 
 <br>
 
@@ -132,6 +133,7 @@ Password: test1234
 <img src="https://github.com/user-attachments/assets/9298e6e9-9c3b-4f7e-aa16-00785c6ddfab" width="800">
 
 <br>
+
 ## 주요 API 설계
 
 <br>
