@@ -10,6 +10,7 @@ public class QueryDslConfig {
     @PersistenceContext
     private EntityManager entityManager;
     String querydsl = "QueryDsl";
+    String querydsl1 = "QueryDsl";
 
 //    @Bean
 //    public JPAQueryFactory jpaQueryFactory() {
