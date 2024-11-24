@@ -33,7 +33,7 @@ public class UserController {
     private PasswordEncoder passwordEncoder;
 
     // 로그인
-    @Operation(summary = "Login API", description = "로그인")
+    @Operation(summary = "로그인 API", description = "로그인")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "로그인 완료")
     })
@@ -61,6 +61,10 @@ public class UserController {
     }
 
     // 회원가입
+    @Operation(summary = "회원가입 API", description = "회원가입")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "회원가입 완료")
+    })
     @PostMapping("/register")
     public ResponseEntity<ResponseHandler<UserResponseDTO>> register(@RequestBody UserFormDTO dto) {
         UserResponseDTO registeredUser = userService.register(dto);
@@ -73,6 +77,10 @@ public class UserController {
     }
 
     // 회원가입 - 닉네임 중복 검사
+    @Operation(summary = "닉네임 중복 검사 API", description = "닉네임 중복 검사")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용 가능한 닉네임입니다.")
+    })
     @PostMapping("/check/nickname")
     public ResponseEntity<ResponseHandler<Boolean>> checkNicknameDuplicate(@RequestBody UserFormDTO dto) {
         userService.isNicknameDuplicate(dto.getNickname());
@@ -86,6 +94,10 @@ public class UserController {
     }
 
     // 회원가입 - 아이디 중복 검사
+    @Operation(summary = "아이디 중복 검사 API", description = "아이디 중복 검사")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용 가능한 사용자 아이디입니다.")
+    })
     @PostMapping("/check/loginId")
     public ResponseEntity<ResponseHandler<Boolean>> checkLoginIdDuplicate(@RequestBody UserFormDTO dto) {
         userService.isLoginIdDuplicate(dto.getLoginId());
@@ -99,6 +111,10 @@ public class UserController {
     }
 
     // 회원가입 - 이메일 중복 검사
+    @Operation(summary = "이메일 중복 검사 API", description = "이메일 중복 검사")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용 가능한 이메일입니다.")
+    })
     @PostMapping("/check/email")
     public ResponseEntity<ResponseHandler<Boolean>> checkEmailDuplicate(@RequestBody UserFormDTO dto) {
         userService.isEmailDuplicate(dto.getEmail());
@@ -112,6 +128,10 @@ public class UserController {
     }
 
     // 회원가입 - 전화번호 중복 검사
+    @Operation(summary = "전화번호 중복 검사 API", description = "전화번호 중복 검사")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용 가능한 전화번호입니다.")
+    })
     @PostMapping("/check/phoneNum")
     public ResponseEntity<ResponseHandler<Boolean>> checkPhonenumDuplicate(@RequestBody UserFormDTO dto) {
         userService.isPhonenumDuplicate(dto.getPhoneNum());
@@ -125,6 +145,10 @@ public class UserController {
     }
 
     // 회원 정보 단건 조회
+    @Operation(summary = "회원 단건 조회 API", description = "회원 단건 조회")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용자 조회 완료")
+    })
     @GetMapping
     public ResponseEntity<ResponseHandler<UserDTO>> getUser(@AuthenticationPrincipal Long userId) {
         // 토큰에 문제가 있는 경우
@@ -144,6 +168,10 @@ public class UserController {
     }
 
     // 회원 정보 수정
+    @Operation(summary = "회원 수정 API", description = "회원 수정")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용자 수정 완료")
+    })
     @PutMapping
     public ResponseEntity<ResponseHandler<UserDTO>> updateUser(@AuthenticationPrincipal Long userId
             , @RequestBody UserFormDTO dto
@@ -164,6 +192,10 @@ public class UserController {
     }
 
     // 회원 정보 수정(프로필 이미지)
+    @Operation(summary = "회원 프로필 이미지 수정 API", description = "회원 프로필 이미지 수정")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용자 프로필 수정 완료")
+    })
     @PutMapping("/profileImg")
     public ResponseEntity<ResponseHandler<UserDTO>> updateUserProfileImg(@AuthenticationPrincipal Long userId
             , @RequestPart(value = "image") MultipartFile image
@@ -184,6 +216,10 @@ public class UserController {
     }
 
     // 회원 탈퇴
+    @Operation(summary = "회원 탈퇴 API", description = "회원 탈퇴")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용자 탈퇴 처리 완료")
+    })
     @PatchMapping("/logical")
     public ResponseEntity<ResponseHandler<Boolean>> deleteUser(@AuthenticationPrincipal Long userId) {
         // 토큰에 문제가 있는 경우
@@ -203,6 +239,10 @@ public class UserController {
     }
 
     // 비밀번호 일치 확인 - ( 회원 수정, 탈퇴시 )
+    @Operation(summary = "비밀번호 일치 확인 API", description = "비밀번호 일치 확인")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "비밀번호 일치")
+    })
     @PostMapping("/check/userPw")
     public ResponseEntity<ResponseHandler<Boolean>> checkUserPw(@AuthenticationPrincipal Long userId, @RequestBody LoginFormDTO dto) {
         // 토큰에 문제가 있는 경우
@@ -222,6 +262,10 @@ public class UserController {
     }
 
     // 사용자 리뷰 목록 조회(장소 정보까지 같이)
+    @Operation(summary = "사용자 리뷰 목록 조회 API", description = "사용자 리뷰 목록 조회")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용자 리뷰 목록 조회")
+    })
     @GetMapping("/review/list")
     public ResponseEntity<ResponseHandler<PaginationResponseDTO<UserReviewDTO>>> getUserReviewList(@AuthenticationPrincipal Long userId,
                                                                                                    @RequestParam(name = "page", defaultValue = "0") int page,
@@ -238,6 +282,10 @@ public class UserController {
     }
 
     // 사용자 모임 일정 목록 조회(사용자가 모임장이거나 속해있는 모임, 삭제된 모임 제외)
+    @Operation(summary = "사용자 모임 일정 목록 조회 API", description = "사용자 모임 일정 목록 조회")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용자 모임 일정 목록 조회")
+    })
     @GetMapping("/meetingTime/list")
     public ResponseEntity<ResponseHandler<List<UserMeetingTimeListDTO>>> getUserMeetingScheduleList(@AuthenticationPrincipal Long userId) {
         // 토큰에 문제가 있는 경우
@@ -251,6 +299,10 @@ public class UserController {
     }
 
     // 사용자 모임 목록 조회(모임 삭제 상태 제외하고, 사용자가 모임장이거나 모임에 속해 있는 경우) - 페이지네이션
+    @Operation(summary = "사용자 모임 목록 조회 API", description = "사용자 모임 목록 조회")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용자 모임 목록 조회")
+    })
     @GetMapping("/meeting/list")
     public ResponseEntity<ResponseHandler<PaginationResponseDTO<UserMeetingListDTO>>> getUserMeetingList(@AuthenticationPrincipal Long userId,
                                                                                                          @RequestParam(name = "page", defaultValue = "0") int page,
@@ -266,6 +318,10 @@ public class UserController {
     }
 
     // 사용자 모임 목록 조회(모임 삭제 상태 제외하고, 사용자가 모임장인 모임) - 페이지네이션
+    @Operation(summary = "사용자 모임장 목록 조회 API", description = "사용자 모임장 목록 조회")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용자 모임장 목록 조회")
+    })
     @GetMapping("/meeting/leader/list")
     public ResponseEntity<ResponseHandler<PaginationResponseDTO<UserMeetingListDTO>>> getUserLeaderMeetingList(@AuthenticationPrincipal Long userId,
                                                                                                                @RequestParam(name = "page", defaultValue = "0") int page,
@@ -283,6 +339,10 @@ public class UserController {
 
     // 모임 상태는 모임에 참여 여부, 가입 신청 전/수락 전/수락 후(참여) -> 신청 여부, 수락 여부, 신고 여부
     // 모임상세 접근시 사용자 상태 조회(신고여부, 신청여부, 수락여부)
+    @Operation(summary = "모임상세 접근시 사용자 상태 조회 API", description = "모임상세 접근시 사용자 상태 조회")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "사용자 모임 상태 조회")
+    })
     @PostMapping("/meeting/status")
     public ResponseEntity<ResponseHandler<UserMeetingStatusDTO>> getUserMeetingStatus(@RequestBody UserMeetingStatusDTO dto) {
         UserMeetingStatusDTO statusDTO = userService.getUserMeetingStatus(dto.getUserId(), dto.getMeetingId());
@@ -291,8 +351,11 @@ public class UserController {
     }
 
     // 사용자가 모임장인 모임들의 승인 대기자 목록(각각 모임에 대한)
+    @Operation(summary = "모임 승인 대기자 목록 조회 API", description = "모임 승인 대기자 목록 조회")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "승인 대기자 목록 조회")
+    })
     @GetMapping("/meeting/{meetingId}/pending-approvals")
-
     public ResponseEntity<ResponseHandler<List<UserResponseDTO>>> getUserMeetingApprovalList(@PathVariable("meetingId") Long meetingId){
         List<UserResponseDTO> getApproval = userService.getUserMeetingApprovalList(meetingId);
         return ResponseHandler.response(getApproval, HttpStatus.OK, "승인 대기자 목록 조회");
