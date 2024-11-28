@@ -36,6 +36,7 @@ Password: test1234
 ```
 
 [👉 킨더피아 배포링크 바로가기](http://ec2-3-38-150-41.ap-northeast-2.compute.amazonaws.com/)<br/>
+[📝 프로젝트 회고록 및 리팩토링](https://mont-blanc.tistory.com/74)
 
 <br>
 
@@ -50,7 +51,7 @@ Password: test1234
 
 ## :raising_hand: Backend Developers
 #### 김어진 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/qldirr)
-- 유저, 관리자, AWS S3 사용하여 이미지 업로드 구현
+- 유저, 관리자, 통계, AWS S3 사용하여 이미지 업로드 구현
 
 #### 석원준 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/ymind14563)
 - 채팅, 신고, 파이프라인 자동화 구축
@@ -86,7 +87,7 @@ Password: test1234
 
 #### Libraries
 
-<img src="https://img.shields.io/badge/Lombok-red?style=for-the-badge"> <img src="https://img.shields.io/badge/JWT-0.9.1-black?style=for-the-badge&logo=json-web-tokens"> <img src="https://img.shields.io/badge/JAXB_API-2.3.1-brown?style=for-the-badge"> <img src="https://img.shields.io/badge/Swagger-1.6.14-85EA2D?style=for-the-badge&logo=swagger&logoColor=black"> <img src="https://img.shields.io/badge/WebSocket-010101?style=for-the-badge&logo=socket.io&logoColor=white"> <img src="https://img.shields.io/badge/STOMP-black?style=for-the-badge">
+<img src="https://img.shields.io/badge/Querydsl-5.0.0-0085C9?style=for-the-badge"> <img src="https://img.shields.io/badge/Lombok-red?style=for-the-badge"> <img src="https://img.shields.io/badge/JWT-0.9.1-black?style=for-the-badge&logo=json-web-tokens"> <img src="https://img.shields.io/badge/JAXB_API-2.3.1-brown?style=for-the-badge"> <img src="https://img.shields.io/badge/Swagger-1.6.14-85EA2D?style=for-the-badge&logo=swagger&logoColor=black"> <img src="https://img.shields.io/badge/WebSocket-010101?style=for-the-badge&logo=socket.io&logoColor=white"> <img src="https://img.shields.io/badge/STOMP-black?style=for-the-badge">
 
 #### Databases
 
