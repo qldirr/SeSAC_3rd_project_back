@@ -1,8 +1,7 @@
 <div align="center">
-  <h1>🧒 킨더피아 🐇</h1>
+  <h1>🧒 킨더피아 🐇</h1> <br>
+  <img src="https://github.com/user-attachments/assets/33ea9cdb-dc36-4684-bf3c-b78a116bc72c" width=800>
 </div>
-
-<img src="https://github.com/user-attachments/assets/33ea9cdb-dc36-4684-bf3c-b78a116bc72c">
 
 
 <div align="center">
@@ -109,16 +108,21 @@ Password: test1234
 
 
 ## ❓ 주요 기술 채택 이유
-- **Spring Boot** : 모듈화된 아키텍처를 제공하며, 의존성 주입(Dependency Injection)같은 프로그래밍 패턴을 이해하고 많은 예제 및 라이브러리 사용을 위함.
+
+<!-- - **Spring Boot** : 모듈화된 아키텍처를 제공하며, 의존성 주입(Dependency Injection)같은 프로그래밍 패턴을 이해하고 많은 예제 및 라이브러리 사용을 위함.
 - **Spring Security** : Spring Security와 통합되어 있어, 인증 및 권한 부여에 강력한 기능을 제공하기 위해 채택
 - **JPA** : 객체 간 관계를 매핑해 복잡한 연관 관계도 손쉽게 관리할 수 있어 유지보수 편리성을 위해 채택
 - **JWT** (JSON Web Token) : 보안 및 서버의 부하를 줄이고, 확장성을 높이기 위해 채택
 - **Socket.io** : 채팅 기능을 위해 실시간 양방향 통신이 가능하고, 다양한 이벤트를 쉽게 처리하기 위해 채택
 - **Multipart** : AWS 서버에 파일을 업로드하여 서버의 저장 공간 절약 및 파일 관리의 용이성과 파일 형식 및 크기 제한을 위해 채택
 - **AWS** : 현재 클라우드 시장에서 가장 큰 점유율을 차지하고 있으며, EC2, S3, RDS 등 다양한 서비스를 지원하고, 자원을 확대/축소 하는 등 유연성의 이점으로 인해 채택
-- **Jenkins** : 코드의 자동 빌드 및 배포 프로세스를 수행하여 버전관리의 용이 및 유지보수성 향상을 위함.
+- **Jenkins** : 코드의 자동 빌드 및 배포 프로세스를 수행하여 버전관리의 용이 및 유지보수성 향상을 위함.  
+--> 
+
+<img src="https://github.com/user-attachments/assets/aa2bcb50-246e-4d60-84e5-6c188c77823a">
 
 <br>
+
 
 ## 📍 주요 테이블 설계
 
