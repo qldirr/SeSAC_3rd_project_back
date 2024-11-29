@@ -121,6 +121,7 @@ Password: test1234
 
 <img src="https://github.com/user-attachments/assets/aa2bcb50-246e-4d60-84e5-6c188c77823a">
 
+
 <br>
 
 
@@ -146,6 +147,11 @@ Password: test1234
 <br>
 
 ## 👩‍💻 팀내 역할
+- swagger 사용
+- spring security 사용, jwt 
+- 응답 구조 공통 클래스
+- AWS S3 사용한 이미지 업로드
+- Querydsl 사용한 리팩토링 
 
 <br>
 
