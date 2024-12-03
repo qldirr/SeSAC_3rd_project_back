@@ -106,7 +106,6 @@ Password: test1234
 
 <br>
 
-
 ## ❓ 주요 기술 채택 이유
 
 <!-- - **Spring Boot** : 모듈화된 아키텍처를 제공하며, 의존성 주입(Dependency Injection)같은 프로그래밍 패턴을 이해하고 많은 예제 및 라이브러리 사용을 위함.
@@ -121,9 +120,7 @@ Password: test1234
 
 <img src="https://github.com/user-attachments/assets/aa2bcb50-246e-4d60-84e5-6c188c77823a">
 
-
 <br>
-
 
 ## 📍 주요 테이블 설계
 
@@ -140,18 +137,12 @@ Password: test1234
 
 <br>
 
-## 🔎 리팩토링
-- Swagger룰 사용해 API 명세서를 한눈에 정리 ➡️ API의 동작을 직접 테스트할 수 있는 UI 제공
-- JPA를 사용해 
-
-<br>
-
 ## 👩‍💻 팀내 역할
-- swagger 사용
-- spring security 사용, jwt 
-- 응답 구조 공통 클래스
+- Spring Security 와 JWT 룰 사용한 인증 기능 구현
+- 응답 구조, 커스텀 에러 공통 클래스 생성
 - AWS S3 사용한 이미지 업로드
-- Querydsl 사용한 리팩토링 
+- 관리자 통계(회원, 모임 관련) 기능 구현
+- Swagger, Querydsl 사용한 리팩토링 
 
 <br>
 
