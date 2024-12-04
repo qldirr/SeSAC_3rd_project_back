@@ -1,6 +1,7 @@
 package sesac_3rd.sesac_3rd.service.user;
 
 import sesac_3rd.sesac_3rd.dto.manager.MeetingCategoryCountDTO;
+import sesac_3rd.sesac_3rd.dto.manager.StatisticsDTO;
 import sesac_3rd.sesac_3rd.dto.user.UserDTO;
 
 import java.time.LocalDate;
@@ -19,6 +20,9 @@ public interface ManagerService {
 
     // 일별 가입자 수
     Map<String, Object> getDailyStat(String yearMonth);
+
+    // 월별&일별 가입자 수
+    List<StatisticsDTO> getUserStatistics(int year, Integer month, String period);
 
     // 총 모임 수('모집중' 수)
     long ongoingMeetingCount();
