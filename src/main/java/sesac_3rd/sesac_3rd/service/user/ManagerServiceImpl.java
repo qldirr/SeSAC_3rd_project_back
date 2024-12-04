@@ -6,6 +6,7 @@ import sesac_3rd.sesac_3rd.constant.MeetingStatus;
 import sesac_3rd.sesac_3rd.dto.manager.DailyUserStatisticsDTO;
 import sesac_3rd.sesac_3rd.dto.manager.MeetingCategoryCountDTO;
 import sesac_3rd.sesac_3rd.dto.manager.MonthlyUserStatisticsDTO;
+import sesac_3rd.sesac_3rd.dto.manager.StatisticsDTO;
 import sesac_3rd.sesac_3rd.dto.user.UserDTO;
 import sesac_3rd.sesac_3rd.entity.Manager;
 import sesac_3rd.sesac_3rd.exception.CustomException;
@@ -14,6 +15,7 @@ import sesac_3rd.sesac_3rd.repository.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,6 +38,9 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Autowired
     ReportRepository reportRepository;
+
+    @Autowired
+    UserRepositoryCustomImpl userRepositoryCustom;
 
     // 관리자 로그인
     @Override
@@ -87,6 +92,18 @@ public class ManagerServiceImpl implements ManagerService {
                 .collect(Collectors.toList()));
 
         return response;
+    }
+
+    // 월별&일별 가입자 수
+    @Override
+    public List<StatisticsDTO> getUserStatistics(int year, Integer month, String period){
+        // 현재 연도를 기본값으로 설정
+        int currentYear = year == 0 ? LocalDateTime.now().getYear() : year;
+
+        // 기본 주기를 월별로 설정
+        String statisticsPeriod = period == null ? "month" : period;
+
+        return userRepositoryCustom.getUserStatistics(currentYear, month, statisticsPeriod);
     }
 
     // 총 모임 수('모집중' 수)

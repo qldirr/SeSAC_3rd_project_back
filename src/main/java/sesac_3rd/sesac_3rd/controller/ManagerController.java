@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import sesac_3rd.sesac_3rd.dto.manager.ManagerDTO;
 import sesac_3rd.sesac_3rd.dto.manager.ManagerLoginResponse;
 import sesac_3rd.sesac_3rd.dto.manager.MeetingCategoryCountDTO;
+import sesac_3rd.sesac_3rd.dto.manager.StatisticsDTO;
 import sesac_3rd.sesac_3rd.dto.user.LoginResponse;
 import sesac_3rd.sesac_3rd.handler.ResponseHandler;
 import sesac_3rd.sesac_3rd.service.user.ManagerService;
@@ -58,6 +59,18 @@ public class ManagerController {
 
         return ResponseHandler.response(stats, HttpStatus.OK, "일별 가입자 수");
     }
+
+    // 월별&일별 가입자 수
+    @GetMapping("/total/userCnt/statics")
+    public ResponseEntity<ResponseHandler<List<StatisticsDTO>>> getUserStatistics(
+            @RequestParam(value = "year", defaultValue = "0") int year,
+            @RequestParam(value = "month", required = false) Integer month,
+            @RequestParam(value = "period", defaultValue = "month") String period
+    ){
+        List<StatisticsDTO> statistics = managerService.getUserStatistics(year, month, period);
+        return ResponseHandler.response(statistics, HttpStatus.OK, "월별/일별 가입자 수");
+    }
+
 
     // 총 모임 수('모집중' 수)
     @GetMapping("/total/meetingCnt")
