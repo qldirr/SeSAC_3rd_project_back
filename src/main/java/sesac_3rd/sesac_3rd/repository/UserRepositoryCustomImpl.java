@@ -6,6 +6,7 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.core.types.dsl.NumberExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 import sesac_3rd.sesac_3rd.dto.manager.StatisticsDTO;
 import sesac_3rd.sesac_3rd.entity.QUser;
 
@@ -15,9 +16,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RequiredArgsConstructor
+@Repository
 public class UserRepositoryCustomImpl {
     private final JPAQueryFactory queryFactory;
 
+    // 월별 & 일별 사용자 가입 수
     public List<StatisticsDTO> getUserStatistics(int year, Integer month, String period){
         NumberExpression<Integer> timeUnit = period.equals("month") ? user.createdAt.month() : user.createdAt.dayOfMonth();
 
